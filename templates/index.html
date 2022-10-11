@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            margin-top: 130px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap:100px;
+            
+        }
+        .ins{
+            font-size: 28px;
+        }
+        button{
+            background-color: red;
+            color: white;
+            padding: 15px 20px;
+            border-style: none;
+            border-radius: 10px;
+            font-size: larger;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+        }
+        body{
+            background-color: azure;
+        }
+        .answer{
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+    </style>
+</head>
+<body>
+    
+        
+        <form action="{{ url_for('predict') }}" method="POST">
+            <div class="ins">Enter your study hours to predict marks</div>
+            <div class="form-group"><input type="number" id="mark" name="mark" placeholder="Enter your Study Hours" class="form-control" required> </div>
+            <div><button>PREDICT MARKS</button></div>
+            
+                
+            <div class="answer">
+                {{ prediction_text }}
+            </div>
+        </form>
+     
+ 
+    <!-- <h1> 
+        {{ prediction_text }}
+    </h1> -->
+
+
+</body>
+</html>
